@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import initialState from '../../redux/actions/initial.actions';
+import fetchShipment from '../../redux/actions/shipment.actions';
 import Aux from '../../hocs/Aux';
 import Shipements from '../../components/shipments';
 import Details from '../../components/details';
@@ -18,11 +18,11 @@ class Shipment extends Component {
   }
 }
 
-const mapStateToProps = state => ({ crt: state.counter });
+const mapStateToProps = state => ({ shipment: state });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onInitialTest: () => dispatch(initialState('teste')),
+    onInitialTest: () => dispatch(fetchShipment()),
   };
 };
 

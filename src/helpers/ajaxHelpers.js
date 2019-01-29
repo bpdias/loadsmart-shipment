@@ -1,4 +1,4 @@
-import Constants from '../config/Endpoints';
+import Constants from '../config/Constants';
 
 const processResponse = (response) => {
   // Check if we are handling a JSON response
@@ -8,6 +8,6 @@ const processResponse = (response) => {
   return response;
 };
 
-const get = () => fetch(Constants.host).then(processResponse);
+const get = url => fetch(`${Constants.host}/json${url}`).then(processResponse);
 
 export default get;

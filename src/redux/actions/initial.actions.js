@@ -1,7 +1,6 @@
 import INITIAL_STATE from '../constants/initial.constants';
 
-const initialSate = payload => ((dispatch) => {
-  console.log(payload);
+const initialSate = () => ((dispatch) => {
   dispatch({
     type: INITIAL_STATE,
     payload: {},
