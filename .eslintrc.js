@@ -8,7 +8,9 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 0,
     'no-nested-ternary': 0,
     'camelcase': 1,
-    "no-underscore-dangle": 0,
+    'no-underscore-dangle': 0,
+    'arrow-body-style': 0,
+    'prefer-default-export': 0,
     'newline-per-chained-call' : [
       'error', {'ignoreChainWithDepth':2},
     ],

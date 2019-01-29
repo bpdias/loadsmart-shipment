@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import fetchInitialState from '../../redux/actions/initial.actions';
+import initialState from '../../redux/actions/initial.actions';
 import Aux from '../../hocs/Aux';
 import Shipements from '../../components/shipments';
 import Details from '../../components/details';
@@ -22,7 +22,7 @@ const mapStateToProps = state => ({ crt: state.counter });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onInitialTest: () => dispatch(fetchInitialState()),
+    onInitialTest: () => dispatch(initialState('teste')),
   };
 };
 

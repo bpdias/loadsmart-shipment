@@ -1,7 +1,11 @@
 import INITIAL_STATE from '../constants/initial.constants';
 
-const fetchInitialState = () => ((dispatch) => {
-  dispatch({ type: INITIAL_STATE });
+const initialSate = payload => ((dispatch) => {
+  console.log(payload);
+  dispatch({
+    type: INITIAL_STATE,
+    payload: {},
+  });
 });
 
-export default fetchInitialState;
+export default initialSate;
