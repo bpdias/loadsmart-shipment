@@ -1,0 +1,48 @@
+header {
+  overflow: hidden;
+  background-color: #353E46;
+  padding: 0px 10px;
+  
+  .Container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+
+    a {
+      float: left;
+      color: #AFAFB2;
+      text-decoration: none;
+      font-size: 12px;
+      text-transform: uppercase;
+      img{
+        padding: 5px;
+        width: 130px;
+      }
+    }
+
+    .header-right {
+      float: right;
+      padding-top: 5px;
+      a {
+        padding:10px 20px 0 0;
+      }
+      
+      a.active, a:hover {
+        color: #29D356;
+      }
+    }
+    
+    @media screen and (max-width: 500px) {
+      a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+  }
+}

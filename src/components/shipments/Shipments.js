@@ -1,6 +1,11 @@
 import React from 'react';
 import Card from '../card';
+import './Shipments.scss';
 
-const Shipments = () => (<Card />);
+const Shipments = () => (
+  <div className="Shipments">
+    <Card />
+  </div>
+);
 
 export default Shipments;

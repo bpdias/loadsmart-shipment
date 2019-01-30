@@ -11,6 +11,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'arrow-body-style': 0,
     'prefer-default-export': 0,
+    'global-require': 0,
     'newline-per-chained-call' : [
       'error', {'ignoreChainWithDepth':2},
     ],

@@ -1,0 +1,14 @@
+.Card{
+  display: flex;
+  flex-direction: column;
+
+  .Carrier{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Information{
+    display: flex;
+    flex-direction: row;
+  }
+}

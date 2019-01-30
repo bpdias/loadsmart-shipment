@@ -1,6 +1,13 @@
 import React from 'react';
-import Card from '../card';
+import './Details.scss';
 
-const Details = () => (<Card />);
+const Details = () => (
+  <div className="Details">Details
+    <div className="Map"></div>
+    <div className="PickUp"></div>
+    <div className="Delivery"></div>
+    <div className="Transport"></div>
+  </div>
+);
 
 export default Details;
