@@ -1,14 +1,74 @@
-.Card{
+.Card {
   display: flex;
   flex-direction: column;
+  padding-bottom:15px;
+  margin: 0px 20px 0px 20px;
+  font-size: 12px;
+  font-weight: 300;
+  border-bottom: 1px solid #E6E6E6;
+  justify-content: flex-start;
+  cursor: pointer;
 
-  .Carrier{
+  .Carrier {
     display: flex;
     flex-direction: row;
+    padding: 10px 0 0 0;
+
+    .Vehicle {
+      flex-basis: 80%;
+      align-self: center;
+      svg{
+        float: left;
+        padding-right: 5px;
+        padding-top: 6px;
+        fill: #58585B;
+      }
+    }
+
+    .Price {
+      color: #77787C;
+      flex-grow: 1;
+      align-self: center;
+      font-weight: bold;
+      font-size: 14px;
+      p {
+        text-align: right;
+        margin: 0;
+      }
+    }
   }
 
-  .Information{
+  .Information {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+
+    .Departure {
+      flex-grow: 1;
+      flex-basis: 30%;
+    }
+    
+    .Arrival {
+      flex-grow: 1;
+    }
+
+    .Departure, .Arrival {
+      .City {
+        color: #77787C;
+        font-weight: bold;
+        margin-bottom: 7px;
+        font-size: 13px;
+        .pointer{
+          color: #B2B5B7;
+          float: right;
+          position: relative;
+          right: 35px;
+          font-weight: 300;
+        }
+      }
+      .Date {
+        
+      }
+    }
   }
 }
