@@ -5,6 +5,8 @@ import './Shipments.scss';
 const Shipments = () => (
   <div className="Shipments">
     <Card />
+    <Card />
+    <Card />
   </div>
 );
 

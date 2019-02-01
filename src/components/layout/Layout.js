@@ -2,6 +2,7 @@ import React from 'react';
 import Aux from '../../hocs/Aux';
 import './Layout.scss';
 import Header from '../header';
+import Footer from '../footer';
 
 const Layout = props => (
   <Aux>
@@ -9,6 +10,7 @@ const Layout = props => (
     <main className="Container">
       {props.children}
     </main>
+    <Footer />   
   </Aux>
 );
 

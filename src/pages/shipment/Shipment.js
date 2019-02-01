@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import fetchShipment from '../../redux/actions/shipment.actions';
+import { fetchShipments } from '../../redux/actions/shipment.actions';
 import Shipements from '../../components/shipments';
 import Details from '../../components/details';
 import './Shipment.scss';
@@ -20,7 +20,7 @@ const mapStateToProps = state => ({ shipment: state });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onInitialTest: () => dispatch(fetchShipment()),
+    onInitialTest: () => dispatch(fetchShipments()),
   };
 };
 

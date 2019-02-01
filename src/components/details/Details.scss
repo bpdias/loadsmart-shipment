@@ -1,7 +1,132 @@
 .Details{
+  display: flex;
+  flex-direction: column;
   color: gray;
-  align-self: flex-start;  
-  flex-grow: 2;
+  background-color: white;
   border-left: 1px solid #E6E6E6;
-  text-align: center;
+  text-align: left;
+  max-width: 760px;
+  .details-wrapper{
+    margin-left: 45px;
+    margin-right: 25px;
+  }
+  
+  .Map{
+    img {
+      max-width: 760px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .Info{
+    color: #58585B;
+    font-weight: bold;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 20px 0;
+  }
+
+  .delivery-info {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+
+    .PickUp {
+      width: 50%;
+      border-right: 1px solid #E6E6E6;
+    }
+
+    .Delivery {
+      width: 50%;
+      padding-left: 15px;
+    }
+
+    .PickUp, .Delivery {
+      margin-bottom: 20px;
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: 300;
+        padding-bottom: 10px;
+        font-size: 14px;
+      }
+      h2{
+        color: #58585B;
+        font-weight: bold;
+        font-size: 14px;
+        padding-bottom: 15px;
+        .bullet {
+          position: relative;
+          top: 5px;
+          color: white;
+          background-color: #58585B !important;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+        .bullet-number{
+          color: white;
+          position: relative;
+          right: 14px;
+        }
+      }
+      h3{
+        font-weight: 300;
+        font-size: 14px;
+        margin-bottom: 5px;
+        padding-left: 28px
+      }
+
+      .delivery-icons{
+        display: flex;
+        flex-direction: row;
+        padding-left: 22px
+      }
+    }
+  }
+  
+  .Transport {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid #E6E6E6;   
+    border-bottom: 1px solid #E6E6E6;   
+
+    .type, 
+    .commodity, 
+    .weight,
+    .rating {
+      flex-grow: 1;
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: 300;
+        padding-bottom: 5px;
+        font-size: 14px;
+      }
+
+      p{
+        color: #77787C;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+    
+    .type {
+      color: #58585B;
+      font-weight: 300;
+      font-size: 14px;
+      padding-bottom: 15px;
+      svg{
+        float: left;
+        padding-right: 5px;
+        fill: #58585B;
+      }
+      p {
+        padding-top: 6px;
+      }
+    }  
+  } 
 }

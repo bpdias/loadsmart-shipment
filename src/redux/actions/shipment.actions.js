@@ -4,11 +4,14 @@ import {
   FECTH_SHIPMENTS_SUCCESS,
   FECTH_SHIPMENTS_IS_LOADING,
   FECTH_SHIPMENTS_ERROR,
+  FECTH_CLICKED_SHIPMENT_SUCCESS,
+  FECTH_CLICKED_SHIPMENT_ERROR,
+  CLICKED_SHIPMENT_IS_LOADING,
 } from '../constants/shipment.constants';
 
-const fetchShipmentSuccess = shipment => ({
+const fetchShipmentSuccess = shipments => ({
   type: FECTH_SHIPMENTS_SUCCESS,
-  shipment,
+  shipments,
 });
 
 const fetchShipmentIsLoading = isLoading => ({
@@ -20,7 +23,37 @@ const fetchShipmentError = () => ({
   type: FECTH_SHIPMENTS_ERROR,
 });
 
-const fetchShipment = () => ((dispatch) => {
+
+const fetchclickedShipmentSuccess = clickedShipment => ({
+  type: FECTH_CLICKED_SHIPMENT_SUCCESS,
+  clickedShipment,
+});
+
+const clickedShipmentIsLoading = isLoading => ({
+  type: CLICKED_SHIPMENT_IS_LOADING,
+  isLoading,
+});
+
+const fetchClickedShipmentError = () => ({
+  type: FECTH_CLICKED_SHIPMENT_ERROR,
+});
+
+
+export const fetchClickedShipment = () => ((dispatch) => {
+  dispatch(clickedShipmentIsLoading(true));
+
+  return get(Endpoints.SHIPMENT1)
+    .then((response) => {
+      dispatch(fetchclickedShipmentSuccess(response));
+      dispatch(fetchShipmentIsLoading(false));
+    })
+    .catch(() => {
+      dispatch(fetchClickedShipmentError());
+      dispatch(fetchShipmentIsLoading(false));
+    });
+});
+
+export const fetchShipments = () => ((dispatch) => {
   dispatch(fetchShipmentIsLoading(true));
 
   return get(Endpoints.SHIPMENTS)
@@ -33,5 +66,3 @@ const fetchShipment = () => ((dispatch) => {
       dispatch(fetchShipmentIsLoading(false));
     });
 });
-
-export default fetchShipment;
