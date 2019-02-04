@@ -6,7 +6,6 @@ import {
   FECTH_SHIPMENTS_ERROR,
   FECTH_CLICKED_SHIPMENT_SUCCESS,
   FECTH_CLICKED_SHIPMENT_ERROR,
-  CLICKED_SHIPMENT_IS_LOADING,
 } from '../constants/shipment.constants';
 
 const fetchShipmentSuccess = shipments => ({
@@ -29,18 +28,12 @@ const fetchclickedShipmentSuccess = clickedShipment => ({
   clickedShipment,
 });
 
-const clickedShipmentIsLoading = isLoading => ({
-  type: CLICKED_SHIPMENT_IS_LOADING,
-  isLoading,
-});
-
 const fetchClickedShipmentError = () => ({
   type: FECTH_CLICKED_SHIPMENT_ERROR,
 });
 
-
 export const fetchClickedShipment = () => ((dispatch) => {
-  dispatch(clickedShipmentIsLoading(true));
+  dispatch(fetchShipmentIsLoading(true));
 
   return get(Endpoints.SHIPMENT1)
     .then((response) => {

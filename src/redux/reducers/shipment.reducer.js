@@ -2,30 +2,22 @@ import {
   FECTH_SHIPMENTS_SUCCESS,
   FECTH_SHIPMENTS_IS_LOADING,
   FECTH_CLICKED_SHIPMENT_SUCCESS,
+  FECTH_SHIPMENTS_ERROR,
 } from '../constants/shipment.constants';
 
 const defaultShipment = {
-  shipments: {},
-  isLoading: false,
+  shipments: null,
+  isLoading: true,
+  error: false,
 };
 
 const defaultClickedShipment = {
-  clickedShipment: {},
+  clickedShipment: null,
   isLoading: false,
+  error: false,
 };
 
-export const shipments = (state = defaultShipment, action) => {
-  switch (action.type) {
-    case FECTH_SHIPMENTS_SUCCESS:
-      return {
-        ...action.shipments,
-      };
-    default:
-      return state;
-  }
-};
-
-export const shipmentsIsLoading = (state = false, action) => {
+export const shipmentsIsLoading = (state = true, action) => {
   switch (action.type) {
     case FECTH_SHIPMENTS_IS_LOADING:
       return action.isLoading;
@@ -34,12 +26,36 @@ export const shipmentsIsLoading = (state = false, action) => {
   }
 };
 
+export const shipments = (state = defaultShipment, action) => {
+  switch (action.type) {
+    case FECTH_SHIPMENTS_SUCCESS:
+      return {
+        ...state,
+        shipments: action.shipments,
+        error: false,
+      };
+    case FECTH_SHIPMENTS_ERROR:
+      return {
+        ...state,
+        error: true,
+      };
+    default:
+      return state;
+  }
+};
+
 export const clickedShipment = (state = defaultClickedShipment, action) => {
   switch (action.type) {
     case FECTH_CLICKED_SHIPMENT_SUCCESS:
-      console.log(action.clickedShipment);
       return {
-        ...action.clickedShipment,
+        ...state,
+        shipment: action.clickedShipment,
+        error: false,
+      };
+    case FECTH_SHIPMENTS_ERROR:
+      return {
+        ...state,
+        error: true,
       };
     default:
       return state;
