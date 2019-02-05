@@ -24,7 +24,7 @@ class Card extends Component {
     const { ...shipment } = this.props.shipment;
     const { handleClick } = this;
     return (
-      <div className="Card" onClick={ handleClick } >
+      <div className="Card" onClick={ handleClick }>
         <div className="Carrier">
           <div className="Vehicle">
             { EquipmentIcon(shipment.equipmentType) }

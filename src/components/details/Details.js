@@ -4,6 +4,7 @@ import CurrencyFormat from 'react-currency-format';
 import { connect } from 'react-redux';
 import { handleDate } from '../../helpers/javascripts/dateHelpers';
 import returnIcon from '../../helpers/javascripts/inconsHelpers';
+import Star from '../svgImages/icons/star';
 import Spinner from '../spinner';
 import Aux from '../../hocs/Aux';
 import {
@@ -89,7 +90,12 @@ class Details extends Component {
             </div>
             <div className="rating">
               <h4>Shipper rating</h4>
-              <p>{shipment.shipperRatingScore}</p>
+              <p>
+                {shipment.shipperRatingScore}
+                <span>
+                  <Star />
+                </span>
+              </p>
             </div>
           </div>
         </div>
