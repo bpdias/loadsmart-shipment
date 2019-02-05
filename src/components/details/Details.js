@@ -12,7 +12,7 @@ import {
   EquipmentIcon,
 } from '../../helpers/javascripts/equipmentTypeHelper';
 
-class Details extends Component {
+export class Details extends Component {
   render() {
     if (this.props.isLoading) {
       return (
@@ -25,7 +25,7 @@ class Details extends Component {
     const { ...shipment } = (this.props.currentShipments)
       ? this.props.currentShipments
       : this.props.defaultShipment[0];
-    console.log(shipment);
+
     return (
       <div className="Details">
         <div className="Map">

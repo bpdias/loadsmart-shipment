@@ -5,7 +5,7 @@ const Header = () => (
   <header>
     <div className="Container">
       <a href="#default" className="logo">
-        <img src={require('../../assets/images/loadsmart-l.png')} alt="Loadsmart" />
+        <img src={require('../../assets/images/loadsmart-l.png')} alt="loadsmart" />
       </a>
       <div className="header-right">
 

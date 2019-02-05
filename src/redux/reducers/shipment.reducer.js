@@ -6,15 +6,16 @@ import {
 } from '../constants/shipment.constants';
 
 const defaultShipment = {
-  shipments: null,
   isLoading: true,
   error: false,
+  active: false,
 };
 
 const defaultClickedShipment = {
   clickedShipment: null,
   isLoading: false,
   error: false,
+  active: true,
 };
 
 export const shipmentsIsLoading = (state = true, action) => {

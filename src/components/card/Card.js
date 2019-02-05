@@ -9,7 +9,7 @@ import {
   EquipmentIcon,
 } from '../../helpers/javascripts/equipmentTypeHelper';
 
-class Card extends Component {
+export class Card extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -18,13 +18,15 @@ class Card extends Component {
   handleClick() {
     const { id } = this.props.shipment;
     this.props._onCardClicked(id);
+    this.props.setActiveCard(id);
   }
 
   render() {
     const { ...shipment } = this.props.shipment;
     const { handleClick } = this;
+
     return (
-      <div className="Card" onClick={ handleClick }>
+      <div className={`Card ${this.props.active ? "active" : ''}`} onClick={ handleClick } >
         <div className="Carrier">
           <div className="Vehicle">
             { EquipmentIcon(shipment.equipmentType) }

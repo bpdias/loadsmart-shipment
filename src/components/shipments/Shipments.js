@@ -1,32 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from '../card';
 import Spinner from '../spinner';
 import Aux from '../../hocs/Aux';
 import './Shipments.scss';
 
-const Shipments = (props) => {
-  let cards = null;
-  if (props.shipments) {
-    cards = (
-      <div>
-        {props.shipments.map((shipment) => {
-          return <Card shipment={shipment} key={shipment.id} />;
-        })}
-      </div>
-    );
-  } else {
-    cards = (
-      <Aux>
-        <Spinner />
-      </Aux>
-    );
+class Shipments extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeCard: null,
+    };
   }
 
-  return (
-    <div className="Shipments">
-      {cards}
-    </div>
-  );
-};
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.shipments && nextProps.shipments.length && this.activeCard === null) {
+      this.setState({ activeCard: nextProps.shipments[0].id });
+    }
+  }
+
+  setActiveCard = (id) => {
+    this.setState({ activeCard: id });
+  }
+
+  render() {
+    let cards = null;
+    if (this.props.shipments) {
+      cards = (
+        <div>
+          {this.props.shipments.map((shipment) => {
+            return (
+              <Card
+                shipment={shipment}
+                key={shipment.id}
+                active={shipment.id === this.state.activeCard}
+                setActiveCard={this.setActiveCard}
+              />
+            );
+          })}
+        </div>
+      );
+    } else {
+      cards = (
+        <Aux>
+          <Spinner />
+        </Aux>
+      );
+    }
+
+    return (
+      <div className="Shipments">
+        {cards}
+      </div>
+    );
+  }
+}
 
 export default Shipments;

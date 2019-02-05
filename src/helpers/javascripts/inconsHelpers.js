@@ -11,27 +11,22 @@ const snakeToCamel = (s) => {
 };
 
 const returnIcon = (accessorials) => {
-  let icons = [];
   if (accessorials) {
-    accessorials.map((accessorial, index) => {
+    const teste = accessorials.map((accessorial) => {
       switch (snakeToCamel(accessorial)) {
         case 'PalletJack':
-          icons.push(<PalletJack key={index} />);
-          return true;
+          return <PalletJack key={accessorial} />;
         case 'Airport':
-          icons.push(<Airport key={index} />);
-          return true;
+          return <Airport key={accessorial} />;
         case 'LiftGate':
-          icons.push(<LiftGate key={index} />);
-          return <LiftGate />;
+          return <LiftGate key={accessorial} />;
         case 'Lumper':
-          icons.push(<Lumper key={index} />);
-          return true;
+          return <Lumper key={accessorial} />;
         default:
           break;
       }
     });
-    return icons;
+    return teste;
   }
 };
 

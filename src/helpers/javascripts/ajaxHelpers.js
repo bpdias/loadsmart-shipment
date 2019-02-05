@@ -8,6 +8,6 @@ const processResponse = (response) => {
   return response;
 };
 
-const get = url => fetch(`${Constants.host}/json${url}`).then(processResponse);
+export const get = url => fetch(`${Constants.host}/json${url}`).then(processResponse);
 
 export default get;

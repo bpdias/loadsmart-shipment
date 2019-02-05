@@ -34,7 +34,7 @@ const fetchClickedShipmentError = () => ({
 
 export const fetchClickedShipment = id => ((dispatch) => {
   dispatch(fetchShipmentIsLoading(true));
-  
+
   return get(`${Endpoints.SHIPMENT}${id}.json`)
     .then((response) => {
       dispatch(fetchclickedShipmentSuccess(response));
@@ -52,6 +52,7 @@ export const fetchShipments = () => ((dispatch) => {
   return get(Endpoints.SHIPMENTS)
     .then((response) => {
       dispatch(fetchShipmentSuccess(response));
+      dispatch(fetchClickedShipment(response[0].id));
       dispatch(fetchShipmentIsLoading(false));
     })
     .catch(() => {
