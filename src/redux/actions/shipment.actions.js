@@ -1,5 +1,5 @@
 import * as Endpoints from '../../config/Endpoints';
-import get from '../../helpers/ajaxHelpers';
+import get from '../../helpers/javascripts/ajaxHelpers';
 import {
   FECTH_SHIPMENTS_SUCCESS,
   FECTH_SHIPMENTS_IS_LOADING,
@@ -32,10 +32,10 @@ const fetchClickedShipmentError = () => ({
   type: FECTH_CLICKED_SHIPMENT_ERROR,
 });
 
-export const fetchClickedShipment = () => ((dispatch) => {
+export const fetchClickedShipment = id => ((dispatch) => {
   dispatch(fetchShipmentIsLoading(true));
-
-  return get(Endpoints.SHIPMENT1)
+  
+  return get(`${Endpoints.SHIPMENT}${id}.json`)
     .then((response) => {
       dispatch(fetchclickedShipmentSuccess(response));
       dispatch(fetchShipmentIsLoading(false));

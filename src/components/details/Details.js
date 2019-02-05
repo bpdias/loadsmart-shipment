@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './Details.scss';
+import CurrencyFormat from 'react-currency-format';
 import { connect } from 'react-redux';
+import { handleDate } from '../../helpers/javascripts/dateHelpers';
+import returnIcon from '../../helpers/javascripts/inconsHelpers';
 import Spinner from '../spinner';
 import Aux from '../../hocs/Aux';
-import IconTruckDryvan from '../svgImages/icons/truck-dryvan';
-import SvgAcessorialPalletJack from '../svgImages/icons/accessorial-pallet-jack';
-import SvgAcessorialAirport from '../svgImages/icons/acessorial-airport';
-import SvgAcessorialLiftGate from '../svgImages/icons/accessorial-lift-gate';
-import SvgAcessorialLumper from '../svgImages/icons/accessorial-lumper';
+import {
+  EquipmentType,
+  EquipmentIcon,
+} from '../../helpers/javascripts/equipmentTypeHelper';
 
 class Details extends Component {
   render() {
@@ -18,10 +20,10 @@ class Details extends Component {
         </Aux>
       );
     }
+
     const { ...shipment } = (this.props.currentShipments)
       ? this.props.currentShipments
       : this.props.defaultShipment[0];
-
     console.log(shipment);
     return (
       <div className="Details">
@@ -30,7 +32,11 @@ class Details extends Component {
         </div>
         <div className="details-wrapper">
           <div className="Info">
-            <p>Jersey City, NJ  &emsp;&emsp;  Bernarda,NJ</p>
+            <p>
+              {`${shipment.stops[0].city}, ${shipment.stops[0].state} `}
+              &emsp;&emsp;
+              {`${shipment.stops[1].city}, ${shipment.stops[1].state} `}
+            </p>
           </div>
           <div className="delivery-info">
             <div className="PickUp">
@@ -38,12 +44,13 @@ class Details extends Component {
               <h2>
                 <span className="bullet" />
                 <span className="bullet-number">1</span>
-                Jersey City, NJ 17011
+                {`${shipment.stops[0].city}, ${shipment.stops[0].state} ${shipment.stops[0].zipcode} `}
               </h2>
-              <h3>Thursday, 14 July, 2015 12:00 - 17:00</h3>
+              <h3>
+                {handleDate(shipment.stops[0].windowStart)}
+              </h3>
               <div className="delivery-icons">
-                <SvgAcessorialPalletJack />
-                <SvgAcessorialAirport />
+                {returnIcon(shipment.stops[0].accessorials)}
               </div>
             </div>
             <div className="Delivery">
@@ -51,31 +58,38 @@ class Details extends Component {
               <h2>
                 <span className="bullet" />
                 <span className="bullet-number">2</span>
-                  Bernarda, NJ 17993
+                {`${shipment.stops[1].city}, ${shipment.stops[1].state} ${shipment.stops[1].zipcode} `}
               </h2>
-              <h3>Thursday, 14 July, 2015 12:00 - 17:00</h3>
+              <h3>{handleDate(shipment.stops[1].windowEnd)}</h3>
               <div className="delivery-icons">
-                <SvgAcessorialLiftGate />
-                <SvgAcessorialLumper />
+                {returnIcon(shipment.stops[1].accessorials)}
               </div>
             </div>
           </div>
           <div className="Transport">
             <div className="type">
-              <IconTruckDryvan />
-              <p>Dry Van 53</p>
+              {EquipmentIcon(shipment.equipmentType)}
+              <p>{EquipmentType(shipment.equipmentType)}</p>
             </div>
             <div className="commodity">
               <h4>Commodity</h4>
-              <p>Apples</p>
+              <p>{shipment.commodity}</p>
             </div>
             <div className="weight">
               <h4>weight</h4>
-              <p>55.000lb</p>
+              <p>
+                <CurrencyFormat
+                  value={shipment.weight}
+                  decimalScale={2}
+                  displayType="text"
+                  thousandSeparator
+                />
+                lb
+              </p>
             </div>
             <div className="rating">
               <h4>Shipper rating</h4>
-              <p>star</p>
+              <p>{shipment.shipperRatingScore}</p>
             </div>
           </div>
         </div>

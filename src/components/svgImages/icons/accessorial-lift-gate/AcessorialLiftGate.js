@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../../helpers/svgConfig.scss';
+import '../../../../helpers/styles/svgConfig.scss';
 
 const SvgAcessorialLiftGate = props => (
   <div className="mountSvg">

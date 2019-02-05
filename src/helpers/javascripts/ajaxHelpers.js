@@ -1,4 +1,4 @@
-import Constants from '../config/Constants';
+import Constants from '../../config/Constants';
 
 const processResponse = (response) => {
   // Check if we are handling a JSON response

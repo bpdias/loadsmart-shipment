@@ -1,25 +1,46 @@
 import React, { Component } from 'react';
+import './Card.scss';
+import CurrencyFormat from 'react-currency-format';
 import { connect } from 'react-redux';
 import { fetchClickedShipment } from '../../redux/actions/shipment.actions';
-import IconTruckDryvan from '../svgImages/icons/truck-dryvan';
-
-import './Card.scss';
+import { handleDateWithoutHours } from '../../helpers/javascripts/dateHelpers';
+import {
+  EquipmentType,
+  EquipmentIcon,
+} from '../../helpers/javascripts/equipmentTypeHelper';
 
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { id } = this.props.shipment;
+    this.props._onCardClicked(id);
+  }
+
   render() {
     const { ...shipment } = this.props.shipment;
+    const { handleClick } = this;
     return (
-      <div className="Card" onClick={ this.props.onCardClicked } >
+      <div className="Card" onClick={ handleClick } >
         <div className="Carrier">
           <div className="Vehicle">
-            <IconTruckDryvan />
+            { EquipmentIcon(shipment.equipmentType) }
             <p>
-              {`${shipment.equipmentType} ${shipment.equipmentSize}`}
+              {`${EquipmentType(shipment.equipmentType)} ${shipment.equipmentSize}"`}
             </p>
           </div>
           <div className="Price">
             <p>
-              ${shipment.fare}
+              <CurrencyFormat
+                value={shipment.fare}
+                decimalScale={2}
+                displayType="text"
+                thousandSeparator
+                prefix="$"
+              />
             </p>
           </div>
         </div>
@@ -30,7 +51,7 @@ class Card extends Component {
               <span className="pointer"> > </span>
             </div>
             <div className="Date">
-              Wednesday, 01 August, 2015
+              {handleDateWithoutHours(shipment.stops[0].windowStart)}
             </div>
           </div>
           <div className="Arrival">
@@ -38,7 +59,7 @@ class Card extends Component {
               {`${shipment.stops[1].city}, ${shipment.stops[1].state} ${shipment.stops[1].zipcode} `}
             </div>
             <div className="Date">
-              Thurday, 14 July, 2015
+              {handleDateWithoutHours(shipment.stops[1].windowEnd)}
             </div>
           </div>
         </div>
@@ -49,7 +70,7 @@ class Card extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCardClicked: () => dispatch(fetchClickedShipment()),
+    _onCardClicked: id => dispatch(fetchClickedShipment(id)),
   };
 };
 

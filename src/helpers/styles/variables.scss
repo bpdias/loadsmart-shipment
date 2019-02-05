@@ -1,0 +1,82 @@
+// General
+$font-size-base-html: 62.5%; // 10px | inspired in https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+
+// Fonts
+$primary-font: Roboto;
+
+// Colors
+$tomato: #F7542F;
+$pink-red: #E50353;
+$watermelon: #FB4769;
+$denim: #147DB9;
+$aqua-blue: #14A7CC;
+$aqua-green: #50E3C2;
+$nile-blue: #193656;
+$soft-blue: #4a90e2;
+$very-light-grey: #e5e5e5;
+$very-soft-blue: #C8EBFB;
+$facebook-blue: #32579e;
+$google-blue: #3188f7;
+$moody-blue: #8579b9;
+$coral: #f5794b;
+$citron: #91A30F;
+
+// Greyscale
+$white: #FFFFFF;
+$ghost-white: #F3F5FD;
+$pale-lilac: #FAFAFF;
+$quartz: #E0E1EC;
+$pale-grey: #ECEEF6;
+$hawkes-blue: #dee0e8;
+$light-grey: #CCCCCC;
+$very-light-grey: #C7C7C7;
+$ghost: #BBBDC5;
+$silver: #BCBCBC;
+$input-border-grey: #979797;
+$grey: #7F7F7F;
+$battleship-grey: #73757D;
+$vulcan: #5F6169;
+$tundora: #4A4A4A;
+$charcoal-grey: #40424A;
+$black: #000000;
+
+$black-shadow: rgba(0, 0, 0, 0.5);
+$hawkes-blue: #DDE0E9;
+
+// Breakpoints
+$mobile-max-width: 720px;
+$site-max-width: 1280px;
+
+// Fixed sizes
+$max-content-width-desktop: 1036px; //1000px
+$max-site-width-desktop: 1280px; //1280px
+
+$menu-top-height-desktop: 50px;
+$menu-top-height-mobile: 50px;
+
+$badge-height-desktop: 72px;
+$badge-height-mobile: 77px;
+
+$fixed-menu-mobile: 65px;
+$secondary-menu-height: 72px;
+
+$car-configurator-height-desktop: 166px;
+
+$new-badge-height-desktop: 34px;
+$car-assembler-height-desktop: 70px;
+
+$top-model-desktop: $menu-top-height-desktop + $badge-height-desktop;
+$top-model-mobile: $menu-top-height-mobile + $badge-height-mobile;
+
+$mopar-top-offset-desktop: $menu-top-height-desktop + $secondary-menu-height;
+$mopar-top-offset-mobile: $menu-top-height-mobile + $secondary-menu-height;
+$mopar-bottom-offset-mobile: $fixed-menu-mobile;
+
+
+$mobile-used-space: $menu-top-height-mobile + $badge-height-mobile + $fixed-menu-mobile;
+
+// Breakpoints
+$smartphones: #{"only screen and (max-width: 720px)"};
+$desktops: #{"only screen and (min-width: 721px)"};
+$tablets: ~'only screen and (min-width: 721px) and (max-width: 860px)';
+$tablets-max-width: #{"only screen and (max-width: 860px)"};
