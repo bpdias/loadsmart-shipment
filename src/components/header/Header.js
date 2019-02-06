@@ -7,7 +7,7 @@ const Header = () => (
       <a href="#default" className="logo">
         <img src={require('../../assets/images/loadsmart-l.png')} alt="loadsmart" />
       </a>
-      <div className="header-right">
+      <div className="Header-right">
 
         <a href="#about">
           <span className="fas fa-phone fa-rotate-90" />

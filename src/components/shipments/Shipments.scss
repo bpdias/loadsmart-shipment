@@ -1,6 +1,7 @@
+@import "../../helpers/styles/variables.scss";
+
 .Shipments{
-  color: #B2B5B7;
+  color: $tundora;
   flex-basis: 37%;
   overflow-y: scroll;  
-
 }

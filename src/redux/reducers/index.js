@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import initialReducer from './initial.reducer';
 import {
   shipments,
   shipmentsIsLoading,
@@ -7,7 +6,6 @@ import {
 } from './shipment.reducer';
 
 export default combineReducers({
-  initialReducer,
   shipments,
   shipmentsIsLoading,
   clickedShipment,

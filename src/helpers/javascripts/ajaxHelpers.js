@@ -10,4 +10,3 @@ const processResponse = (response) => {
 
 export const get = url => fetch(`${Constants.host}/json${url}`).then(processResponse);
 
-export default get;

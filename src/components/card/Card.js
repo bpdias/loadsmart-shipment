@@ -27,7 +27,7 @@ export class Card extends Component {
     const { handleClick } = this;
 
     return (
-      <div className={`Card ${this.props.active ? "active" : ''}`} onClick={ handleClick } >
+      <div className={`Card ${this.props.active ? "Active" : ''}`} onClick={ handleClick } >
         <div className="Carrier">
           <div className="Vehicle">
             { EquipmentIcon(shipment.equipmentType) }
@@ -51,7 +51,7 @@ export class Card extends Component {
           <div className="Departure">
             <div className="City">
               {`${shipment.stops[0].city}, ${shipment.stops[0].state} ${shipment.stops[0].zipcode} `}
-              <span className="pointer"> > </span>
+              <span className="Pointer"> > </span>
             </div>
             <div className="Date">
               {handleDateWithoutHours(shipment.stops[0].windowStart)}

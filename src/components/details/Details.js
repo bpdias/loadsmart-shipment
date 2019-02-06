@@ -32,7 +32,7 @@ export class Details extends Component {
         <div className="Map">
           <img src={require('../../assets/images/maps.png')} alt="maps" />
         </div>
-        <div className="details-wrapper">
+        <div className="Details-wrapper">
           <div className="Info">
             <p>
               {`${shipment.stops[0].city}, ${shipment.stops[0].state} `}
@@ -40,44 +40,44 @@ export class Details extends Component {
               {`${shipment.stops[1].city}, ${shipment.stops[1].state} `}
             </p>
           </div>
-          <div className="delivery-info">
+          <div className="Delivery-info">
             <div className="PickUp">
               <h1>PICK-UP</h1>
               <h2>
-                <span className="bullet" />
-                <span className="bullet-number">1</span>
+                <span className="Bullet" />
+                <span className="Bullet-number">1</span>
                 {`${shipment.stops[0].city}, ${shipment.stops[0].state} ${shipment.stops[0].zipcode} `}
               </h2>
               <h3>
                 {handleDate(shipment.stops[0].windowStart)}
               </h3>
-              <div className="delivery-icons">
+              <div className="Delivery-icons">
                 {returnIcon(shipment.stops[0].accessorials)}
               </div>
             </div>
             <div className="Delivery">
               <h1>DELIVERY</h1>
               <h2>
-                <span className="bullet" />
-                <span className="bullet-number">2</span>
+                <span className="Bullet" />
+                <span className="Bullet-number">2</span>
                 {`${shipment.stops[1].city}, ${shipment.stops[1].state} ${shipment.stops[1].zipcode} `}
               </h2>
               <h3>{handleDate(shipment.stops[1].windowEnd)}</h3>
-              <div className="delivery-icons">
+              <div className="Delivery-icons">
                 {returnIcon(shipment.stops[1].accessorials)}
               </div>
             </div>
           </div>
           <div className="Transport">
-            <div className="type">
+            <div className="Type">
               {EquipmentIcon(shipment.equipmentType)}
               <p>{EquipmentType(shipment.equipmentType)}</p>
             </div>
-            <div className="commodity">
+            <div className="Commodity">
               <h4>Commodity</h4>
               <p>{shipment.commodity}</p>
             </div>
-            <div className="weight">
+            <div className="Weight">
               <h4>weight</h4>
               <p>
                 <CurrencyFormat
@@ -89,7 +89,7 @@ export class Details extends Component {
                 lb
               </p>
             </div>
-            <div className="rating">
+            <div className="Rating">
               <h4>Shipper rating</h4>
               <p>
                 {shipment.shipperRatingScore}

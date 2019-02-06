@@ -1,39 +1,44 @@
-.Details{
+@import "../../helpers/styles/variables.scss";
+
+.Details {
   display: flex;
   flex-direction: column;
-  color: gray;
-  background-color: white;
-  border-left: 1px solid #E6E6E6;
+  color: $vulcan;
+  background-color: $white;
+  border-left: 1px solid $gray-border;
   text-align: left;
   max-width: 760px;
-  .details-wrapper{
+
+  .Details-wrapper {
     margin-left: 45px;
     margin-right: 25px;
+    margin-bottom: 60px;
   }
-  
-  .Map{
+
+  .Map {
     img {
       max-width: 760px;
       width: 100%;
       height: 100%;
     }
   }
-  
-  .Info{
-    color: #58585B;
+
+  .Info {
+    color: $text-gray;
     font-weight: bold;
-    border-bottom: 1px solid #E6E6E6;
+    font-size: 1.1rem;
+    border-bottom: 1px solid $gray-border;
     padding: 20px 0;
   }
 
-  .delivery-info {
+  .Delivery-info {
     margin-top: 15px;
     display: flex;
     flex-direction: row;
 
     .PickUp {
       width: 50%;
-      border-right: 1px solid #E6E6E6;
+      border-right: 1px solid $gray-border;
     }
 
     .Delivery {
@@ -41,95 +46,105 @@
       padding-left: 15px;
     }
 
-    .PickUp, .Delivery {
+    .PickUp,
+    .Delivery {
       margin-bottom: 20px;
 
+      h1, h2 {
+        font-size: 0.9rem;
+      }
+      
       h1 {
         text-transform: uppercase;
         font-weight: 300;
         padding-bottom: 10px;
-        font-size: 14px;
       }
-      h2{
-        color: #58585B;
+
+      h2 {
+        color: $text-gray;
         font-weight: bold;
-        font-size: 14px;
         padding-bottom: 15px;
-        .bullet {
+
+        .Bullet {
           position: relative;
           top: 5px;
-          color: white;
-          background-color: #58585B !important;
+          color: $white;
+          background-color: $text-gray !important;
           height: 20px;
           width: 20px;
           border-radius: 50%;
           display: inline-block;
         }
-        .bullet-number{
+
+        .Bullet-number {
           color: white;
           position: relative;
           right: 14px;
         }
       }
-      h3{
+
+      h3 {
         font-weight: 300;
         font-size: 14px;
         margin-bottom: 5px;
         padding-left: 28px
       }
 
-      .delivery-icons{
+      .Delivery-icons {
         display: flex;
         flex-direction: row;
         padding-left: 22px
       }
     }
   }
-  
+
   .Transport {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 0;
-    border-top: 1px solid #E6E6E6;   
-    border-bottom: 1px solid #E6E6E6;   
+    border-top: 1px solid $gray-border;
+    border-bottom: 1px solid $gray-border;
 
-    .type, 
-    .commodity, 
-    .weight,
-    .rating {
+    .Type,
+    .Commodity,
+    .Weight,
+    .Rating {
       flex-grow: 1;
 
       h4 {
         text-transform: uppercase;
         font-weight: 300;
         padding-bottom: 5px;
-        font-size: 14px;
+        font-size: 0.9rem;
       }
 
-      p{
+      p {
         color: #77787C;
-        font-size: 12px;
+        font-size: 0.8rem;
         font-weight: bold;
       }
     }
-    
-    .type {
-      color: #58585B;
+
+    .Type {
+      color: $text-gray;
       font-weight: 300;
-      font-size: 14px;
+      font-size: 0.8rem;
       padding-bottom: 15px;
-      svg{
+
+      svg {
         float: left;
         padding-right: 5px;
-        fill: #58585B;
+        fill: $text-gray;
       }
+
       p {
         padding-top: 6px;
       }
     }
-    .rating span {
+
+    .Rating span {
       margin-left: 5px;
-    } 
-  } 
+    }
+  }
 }

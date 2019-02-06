@@ -1,5 +1,5 @@
 import * as Endpoints from '../../config/Endpoints';
-import get from '../../helpers/javascripts/ajaxHelpers';
+import { get } from '../../helpers/javascripts/ajaxHelpers';
 import {
   FECTH_SHIPMENTS_SUCCESS,
   FECTH_SHIPMENTS_IS_LOADING,
@@ -21,7 +21,6 @@ const fetchShipmentIsLoading = isLoading => ({
 const fetchShipmentError = () => ({
   type: FECTH_SHIPMENTS_ERROR,
 });
-
 
 const fetchclickedShipmentSuccess = clickedShipment => ({
   type: FECTH_CLICKED_SHIPMENT_SUCCESS,

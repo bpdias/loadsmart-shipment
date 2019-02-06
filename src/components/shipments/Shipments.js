@@ -8,7 +8,7 @@ class Shipments extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeCard: true,
+      activeCard: 1,
     };
   }
 
@@ -26,7 +26,7 @@ class Shipments extends Component {
     let cards = null;
     if (this.props.shipments) {
       cards = (
-        <div>
+        <Aux>
           {this.props.shipments.map((shipment) => {
             return (
               <Card
@@ -37,7 +37,7 @@ class Shipments extends Component {
               />
             );
           })}
-        </div>
+        </Aux>
       );
     } else {
       cards = (

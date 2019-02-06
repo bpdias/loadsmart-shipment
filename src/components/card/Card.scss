@@ -1,10 +1,12 @@
+@import "../../helpers/styles/variables.scss";
+
 .Card {
   display: flex;
   flex-direction: column;
   padding: 0px 20px 15px 20px;
   font-size: 12px;
   font-weight: 300;
-  border-bottom: 1px solid #E6E6E6;
+  border-bottom: 1px solid $gray-border;
   justify-content: flex-start;
   cursor: pointer;
 
@@ -19,7 +21,7 @@
       svg{
         float: left;
         padding-right: 5px;
-        fill: #58585B;
+        fill: $text-gray;
       }
       p {
         padding-top: 6px;
@@ -27,7 +29,7 @@
     }
 
     .Price {
-      color: #77787C;
+      color: $vulcan;
       flex-grow: 1;
       align-self: center;
       font-weight: bold;
@@ -55,12 +57,12 @@
 
     .Departure, .Arrival {
       .City {
-        color: #77787C;
+        color: $vulcan;
         font-weight: bold;
-        margin-bottom: 7px;
-        font-size: 13px;
-        .pointer{
-          color: #B2B5B7;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+        .Pointer{
+          color: $tundora;
           float: right;
           position: relative;
           right: 35px;
