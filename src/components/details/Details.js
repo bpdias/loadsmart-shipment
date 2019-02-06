@@ -3,6 +3,7 @@ import './Details.scss';
 import CurrencyFormat from 'react-currency-format';
 import { connect } from 'react-redux';
 import { handleDate } from '../../helpers/javascripts/dateHelpers';
+import rating from '../../helpers/javascripts/ratingHelper';
 import returnIcon from '../../helpers/javascripts/inconsHelpers';
 import Star from '../svgImages/icons/star';
 import Spinner from '../spinner';
@@ -93,7 +94,7 @@ export class Details extends Component {
               <p>
                 {shipment.shipperRatingScore}
                 <span>
-                  <Star />
+                  {rating(shipment.shipperRatingScore)}
                 </span>
               </p>
             </div>

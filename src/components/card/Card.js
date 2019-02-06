@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../helpers/styles/common.scss';
 import './Card.scss';
 import CurrencyFormat from 'react-currency-format';
 import { connect } from 'react-redux';

@@ -9,7 +9,7 @@ const Header = () => (
       </a>
       <div className="header-right">
 
-        <a className="active" href="#about">
+        <a href="#about">
           <span className="fas fa-phone fa-rotate-90" />
           (646) 887 6278
         </a>

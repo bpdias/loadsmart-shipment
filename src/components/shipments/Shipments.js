@@ -8,7 +8,7 @@ class Shipments extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeCard: null,
+      activeCard: true,
     };
   }
 
