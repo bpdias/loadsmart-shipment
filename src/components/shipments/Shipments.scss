@@ -3,5 +3,9 @@
 .Shipments{
   color: $tundora;
   flex-basis: 37%;
-  overflow-y: scroll;  
+  overflow-y: scroll; 
+  
+  @media #{$smartphones} {
+    min-height: 280px;
+  }
 }

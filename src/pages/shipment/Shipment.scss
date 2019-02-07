@@ -1,7 +1,12 @@
+@import "../../helpers/styles/variables.scss";
 .Shipment{
   display: flex;
   flex-direction: row;
   background-color: #F5F4F5;
   margin-top: 40px;
   height: 97%;
+  @media #{$smartphones} {
+    margin-top: 205px;
+    display: grid
+  }
 }

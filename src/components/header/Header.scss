@@ -35,21 +35,22 @@ header {
         color: $logo-green;
       }
     }
-    
     @media #{$smartphones} {
       a {
         float: none;
         display: block;
         text-align: left;
       }
-
+  
       .Header-right {
+        a{
+          padding: 20px 20px 0 0;
+        }
         float: none;
       }
     }
-
-    @media #{$tablets}{
-
-    }
+  }
+  @media #{$smartphones} {
+    padding-bottom: 10px;
   }
 }
