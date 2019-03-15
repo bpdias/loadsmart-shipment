@@ -1,37 +1,3 @@
-### React ###
-
-### Project Intention ###
-* Provide information about shipments for the end user. The user should be able to see all the current shipments and their details. The service are avaible for desktop and mobile.
-
-### Project Dependencies ###
-
- * Npm as package manager. (https://www.npmjs.com/)
- * React.js as the application library core. (https://reactjs.org/)
- * Redux as the predictable state container for JavaScript apps. (https://redux.js.org/)
- * Redux Thunk handle asynchronous calls. (https://github.com/reduxjs/redux-thunk)
- * Jest as the Javascript test framework. (https://jestjs.io/en/)
- * Enzyme as the JavaScript Testing utility for React. (https://airbnb.io/enzyme/)
- * Sass as the preprocessor and extension of CSS. (https://sass-lang.com)
- * Eslint to keep the airbnb code pattern. (https://eslint.org/)
- 
-
-### Compile and run the project ###
-
-Go to the root folder end run the commands.
-
-- npm install (npm i)
-
-- npm run start
-
-
-### Running the tests ###
-
-- npm run test
-
-### Build the project ###
-
-- npm run build
-
 ### Development Description ###
 
 After receiving the challenge, I choose the React library to handle the specifications. 

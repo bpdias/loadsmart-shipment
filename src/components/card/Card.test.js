@@ -12,7 +12,7 @@ describe('components', () => {
         setActiveCard={() => {}}
       />);
       expect(wrapper.find('div.Card').hasClass('Card')).toBe(true);
-      expect(wrapper.find('div.Card').hasClass('active')).toBe(true);
+      expect(wrapper.find('div.Card').hasClass('Active')).toBe(true);
     });
 
     it('display unactive card', () => {
@@ -22,7 +22,7 @@ describe('components', () => {
         setActiveCard={() => {}}
       />);
       expect(wrapper.find('div.Card').hasClass('Card')).toBe(true);
-      expect(wrapper.find('div.Card').hasClass('active')).toBe(false);
+      expect(wrapper.find('div.Card').hasClass('Active')).toBe(false);
     });
 
     it('testing handleClick function receiving id 1', () => {
